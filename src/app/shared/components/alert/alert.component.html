@@ -1,0 +1,20 @@
+<div *ngIf="alerts" class="alerts">
+  <div
+    *ngFor="let alert of alerts"
+    class="{{ cssClass(alert) }} alert-white alert-dismissible rounded fade show mb-2">
+    <button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close"
+            (click)="removeAlert(alert)">×</button>
+    <div class="icon">
+        <i class="{{ cssIcon(alert) }}"></i>
+    </div>
+    <h4 *ngIf="alert.header" class="alert-heading">{{ alert.header }}</h4>
+    <p>{{ alert.message }}</p>
+
+    <hr *ngIf="alert.tip">
+    <p *ngIf="alert.tip" class="mb-0">{{ alert.tip }}</p>
+    <div class="progress">
+      <div class="{{ cssProgress(alert) }}" role="progressbar" [attr.aria-valuenow]="alert.progress"
+        [style.width]="alert.progress + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+</div>

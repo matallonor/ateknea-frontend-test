@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  nginx-angular-app:
+    build:
+      context: ./
+      dockerfile: ./docker/prod.Dockerfile
+    restart: on-failure
+    volumes:
+      - .:/ng-app
+      - /ng-app/node_modules
+      # - /ng-app/dist
+    ports:
+      - "8080:80"

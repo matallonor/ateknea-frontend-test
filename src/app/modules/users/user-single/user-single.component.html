@@ -1,0 +1,95 @@
+<div class="card">
+  <form *ngIf="userForm" novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="card-header">
+      <div *ngIf="isNewUser">
+        <i class="icon-note"></i>
+        <strong>{{ 'New User' | translate }}</strong> {{ 'Form' | translate }}
+      </div>
+      <ng-template *ngIf="!isNewUser">
+        <div>
+          <i class="icon-note"></i>
+          <strong>{{ 'User Edit' | translate }}</strong> {{ 'Form' | translate }}
+        </div>
+        <div class="card-actions">
+          <a (click)="confirmRemoveUser()" class="btn-setting">
+            <i class="fa fa-trash"></i>
+          </a>
+        </div>
+      </ng-template>
+    </div>
+    <div class="card-body">
+      <!-- /////// NAME ////////-->
+      <div class="form-group row">
+        <label class="col-md-3 form-control-label" for="name">
+          {{ 'Name' | translate }}
+        </label>
+        <div class="col-md-9">
+          <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name..."
+                 formControlName="name" [ngClass]="displayFieldCss(name)" [(ngModel)]="user.name">
+          <div *ngIf="name.invalid && (name.dirty)">
+            <div *ngIf="name.errors.required" class="invalid-feedback">
+              {{ 'User Name is required.' | translate }}
+            </div>
+            <div *ngIf="name.errors.maxlength" class="invalid-feedback">
+              {{ 'User Name can\'t be more than 20 characters long.' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /////// NAME ////////-->
+      <div class="form-group row">
+        <label class="col-md-3 form-control-label" for="lastName">
+          {{ 'Last name' | translate }}
+        </label>
+        <div class="col-md-9">
+          <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Last Name..."
+                 formControlName="lastName" [ngClass]="displayFieldCss(lastName)" [(ngModel)]="user.lastName">
+          <div *ngIf="lastName.invalid && (lastName.dirty)">
+            <div *ngIf="lastName.errors.required" class="invalid-feedback">
+              {{ 'Last Name is required.' | translate }}
+            </div>
+            <div *ngIf="lastName.errors.maxlength" class="invalid-feedback">
+              {{ 'Last Name can\'t be more than 40 characters long.' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- /////// EMAIL ////////-->
+      <div class="form-group row">
+        <label class="col-md-3 form-control-label" for="email">{{ 'Email' | translate }}</label>
+        <div class="col-md-9">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email..."
+                 formControlName="email" [ngClass]="displayFieldCss(email)" [(ngModel)]="user.email">
+          <div *ngIf="email.invalid && (email.dirty)">
+            <div *ngIf="email.errors.required" class="invalid-feedback">
+              {{ 'Email is required.' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-3 form-control-label">{{ 'Enabled' | translate }}</label>
+        <div class="col-md-1">
+          <input type="checkbox" id="enabled" name="enabled" class="form-control" formControlName="enabled"
+               [ngClass]="displayFieldCss(enabled)" [(ngModel)]="user.enabled">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer text-right">
+      <a [routerLink]="['/users']" class="btn btn-danger">
+        {{ 'Cancel' | translate }}
+      </a>
+      <button *ngIf="isNewUser" type="reset" class="btn btn-secondary">
+        <i class="fa fa-undo"></i> {{ 'Reset' | translate }}
+      </button>
+      <button type="submit" class="btn btn-primary">
+        <i class="fa fa-dot-circle-o"></i> {{ submitAction | translate }}
+      </button>
+    </div>
+  </form>
+</div>

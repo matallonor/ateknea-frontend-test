@@ -1,0 +1,19 @@
+# Git files
+.git
+.gitignore
+
+# PIP
+# Pipfile
+# Pipfile.lock
+
+# README
+README.md
+
+# IDE config files
+.idea
+.vscode
+
+# Docker files
+/docker
+docker-compose.dev.yml
+docker-compose.prod.yml

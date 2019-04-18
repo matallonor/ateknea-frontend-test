@@ -1,0 +1,78 @@
+// Here you can add other styles
+.invalid-feedback{
+  display: block;
+}
+
+table{
+  background-color: #ffffff !important;
+  border-collapse: collapse !important;
+
+  &.dataTable{
+    border-collapse: collapse !important;
+  }
+
+  thead.thead-inverse{
+    background-color: $sidebar-bg;
+    color: #f0f3f5;
+  }
+}
+
+.main{
+  position: relative;
+
+  .dataTables_wrapper.container-fluid {
+    padding: 0;
+  }
+}
+
+.btn {
+  border: $btn-border;
+
+  &.btn-primary {
+    background: $btn-primary-bg;
+    color: $btn-primary-color !important;
+    // border-radius: .15rem !important;
+
+    &:hover {
+      color: #fff;
+      background-color: $btn-primary-bg-hover;
+      border-color: $btn-border;
+    }
+  }
+
+  &.btn-danger{
+    color: #fff !important;
+  }
+}
+
+.ng-select{
+  .ng-select-container{
+    border-radius: 0;
+    border: 1px solid $gray-200;
+  }
+
+  &.ng-select-opened>.ng-select-container{
+    border-radius: 0;
+    border: 1px solid $gray-200;
+  }
+}
+
+.ng-dropdown-panel {
+  background-color: #fff;
+  border-color: 1px solid $gray-200;
+}
+
+// Datatable pagination responsive
+@media screen and (max-width: 767px) {
+  li.paginate_button.previous {
+    display: inline;
+  }
+
+  li.paginate_button.next {
+    display: inline;
+  }
+
+  li.paginate_button {
+    display: none;
+  }
+}

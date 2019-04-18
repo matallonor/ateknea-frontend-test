@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    <i class="icon-user icons"></i> {{ 'Users' | translate }}
+    <div class="card-actions">
+      <a [routerLink]="['/users/new']" class="btn-setting">
+        <i class="icon-plus"></i>
+      </a>
+    </div>
+  </div>
+  <div class="card-body">
+    <table *ngIf="users && users.length > 0; else noUsers" id="users-table" class="table table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>{{ 'Name' | translate }}</th>
+          <th>{{ 'Last name' | translate }}</th>
+          <th>{{ 'Email' | translate }}</th>
+          <th>{{ 'Enabled' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" scope="row">
+          <td>
+            <a [routerLink]="['/users', user.id]">{{ user.name }} </a>
+          </td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.enabled }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noUsers>
+      <div class="alert alert-info" role="alert">
+        {{ 'There are no users to show' | translate }}.
+      </div>
+    </ng-template>
+  </div>
+</div>

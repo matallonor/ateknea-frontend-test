@@ -1,0 +1,16 @@
+<div *ngIf="show" id="loading">
+  <div class="background"></div>
+  <div class="feedback">
+    <div class="sk-wave">
+      <div class="sk-rect sk-rect1"></div>
+      <div class="sk-rect sk-rect2"></div>
+      <div class="sk-rect sk-rect3"></div>
+      <div class="sk-rect sk-rect4"></div>
+      <div class="sk-rect sk-rect5"></div>
+    </div>
+    <div [hidden]='!message' class="message">
+      {{ message }}
+    </div>
+  </div>
+  <span class="sr-only">Loading...</span>
+</div>

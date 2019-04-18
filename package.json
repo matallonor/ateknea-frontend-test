@@ -1,10 +1,9 @@
 {
-  "name": "nakima-admin-panel",
+  "name": "ateknea-frontend-test",
   "version": "1.0.0",
-  "description": "Nakima Admin Panel",
-  "author": "Nakima SL",
-  "homepage": "https://www.nakima.es",
-  "copyright": "Copyright 2018 Nakima SL",
+  "description": "Ateknea Frontend Test",
+  "author": "Marc Tallón",
+  "homepage": "https://www.linkedin.com/in/marc-tall%C3%B3n-ortega-36077596/",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

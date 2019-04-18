@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "@nakima/admin-panel-angular5": {
+    "ateknea-frontend-test": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -62,20 +62,20 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "@nakima/admin-panel-angular5:build",
+            "browserTarget": "ateknea-frontend-test:build",
             "port": 4200,
             "host": "0.0.0.0"
           },
           "configurations": {
             "production": {
-              "browserTarget": "@nakima/admin-panel-angular5:build:production"
+              "browserTarget": "ateknea-frontend-test:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "@nakima/admin-panel-angular5:build"
+            "browserTarget": "ateknea-frontend-test:build"
           }
         },
         "test": {
@@ -121,7 +121,7 @@
         }
       }
     },
-    "@nakima/admin-panel-angular5-e2e": {
+    "ateknea-frontend-test-e2e": {
       "root": "",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -130,7 +130,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "@nakima/admin-panel-angular5:serve"
+            "devServerTarget": "ateknea-frontend-test:serve"
           }
         },
         "lint": {
@@ -145,7 +145,7 @@
       }
     }
   },
-  "defaultProject": "@nakima/admin-panel-angular5",
+  "defaultProject": "ateknea-frontend-test",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
